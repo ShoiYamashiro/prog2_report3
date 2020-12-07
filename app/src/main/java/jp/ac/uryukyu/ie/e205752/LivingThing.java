@@ -35,4 +35,28 @@ public class LivingThing {
             System.out.printf("%sは倒れた。\n", name);
         }
     }
+
+        public int getHitPoint() {
+        return this.hitPoint;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public void setName(String _name) {
+        this.name = _name;
+    }
+
+    public void setHitPoint(int _hitPoint) {
+        this.hitPoint = _hitPoint;
+    }
+
+    public void setAttack(int _attack) {
+        this.attack = _attack;
+    }
+
+    public void setDead(boolean _dead) {
+        this.dead = _dead;
+    }
 }
