@@ -1,7 +1,11 @@
 package jp.ac.uryukyu.ie.e205752;
 /**
- * 敵クラス。 String name; //敵の名前 int hitPoint; //敵のHP int attack; //敵の攻撃力 boolean
- * dead; //敵の生死状態。true=死亡。 Created by tnal on 2016/11/13.
+ * 敵クラス。 
+ * String name; //敵の名前 
+ * int hitPoint; //敵のHP 
+ * int attack; //敵の攻撃力 boolean
+ * dead; //敵の生死状態。true=死亡。 
+ * Created by tnal on 2016/11/13.
  */
 public class Enemy {
     private String name;
@@ -9,18 +13,6 @@ public class Enemy {
     private int attack;
     private boolean dead;
 
-    public String getName(){
-        return name;
-    }
-
-    public boolean getdead(){
-        return dead;
-    }
-    
-    public int getHitPoint(){
-        return hitPoint;
-    }
-    
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * 
@@ -37,8 +29,9 @@ public class Enemy {
     }
 
     /**
-     * Heroへ攻撃するメソッド。 attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
-     * 
+     * enemyが生きているかどうかの真偽判定を行う
+     * 真であれば、Heroへ攻撃するメソッド。 attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
+     * 偽であればattackメソットは動かない
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
@@ -48,9 +41,10 @@ public class Enemy {
             hero.wounded(damage);
         }
     }
+
     /**
-     * 自身へ攻撃されたときのダメージ処理をするメソッド。 指定されたダメージを hitPoint から引き、死亡判定を行う。
-     * 
+     * 自身へ攻撃されたときのダメージ処理をするメソッド。 
+     * 指定されたダメージを hitPoint から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
     public void wounded(int damage) {
@@ -59,6 +53,43 @@ public class Enemy {
             dead = true;
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
+    }
+
+    /**
+     * アクセサを使ってprivateしたコードを他のクラスで参照できるようにする。
+     * 
+     * @return getName
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    public int getHitPoint() {
+        return this.hitPoint;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public boolean getdead() {
+        return this.dead;
+    }
+
+    public void setName(String _name) {
+        this.name = _name;
+    }
+
+    public void setHitPoint(int _hitPoint) {
+        this.hitPoint = _hitPoint;
+    }
+
+    public void setAttack(int _attack) {
+        this.attack = _attack;
+    }
+
+    public void setDead(boolean _dead) {
+        this.dead = _dead;
     }
 
 }

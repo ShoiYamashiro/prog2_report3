@@ -13,18 +13,6 @@ public class Hero {
     private int attack;
     private boolean dead;
 
-    public String getName(){
-        return name;
-    }
-
-    public boolean getdead(){
-        return dead;
-    }
-
-    public int getHitPoint(){
-        return hitPoint;
-    }
-
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name ヒーロー名
@@ -62,4 +50,42 @@ public class Hero {
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
         }
     }
+
+    /**
+     * アクセサを使ってprivateしたコードを他のクラスで参照できるようにする。
+     * 
+     * @return getName
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    public int getHitPoint() {
+        return this.hitPoint;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public boolean getdead() {
+        return this.dead;
+    }
+
+    public void setName(String _name) {
+        this.name = _name;
+    }
+
+    public void setHitPoint(int _hitPoint) {
+        this.hitPoint = _hitPoint;
+    }
+
+    public void setAttack(int _attack) {
+        this.attack = _attack;
+    }
+
+    public void setDead(boolean _dead) {
+        this.dead = _dead;
+    }
+
 }
