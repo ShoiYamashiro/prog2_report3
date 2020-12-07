@@ -1,5 +1,14 @@
 package jp.ac.uryukyu.ie.e205752;
 
+/**
+ * 継承クラス。 
+ * String name; 
+ * //敵の名前 int hitPoint; 
+ * //敵のHP int attack; 
+ * //敵の攻撃力 boolean
+ * dead; //敵の生死状態。true=死亡。 
+ */
+
 public class LivingThing {
     private String name;
     private int hitPoint;
@@ -22,6 +31,13 @@ public class LivingThing {
         return name;
     }
 
+    /**
+     * enemyが生きているかどうかの真偽判定を行う 真であれば、Heroへ攻撃するメソッド。
+     * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。 偽であればattackメソットは動かない
+     * 
+     * @param hero 攻撃対象
+     */
+
     public void attack(LivingThing opponent) {
         if (dead){
             return;
@@ -39,7 +55,13 @@ public class LivingThing {
         }
     }
 
-        public int getHitPoint() {
+    /**
+     * アクセサを使ってprivateしたコードを他のクラスで参照できるようにする。
+     * 
+     * @return getName
+     */
+    
+    public int getHitPoint() {
         return this.hitPoint;
     }
 

@@ -5,6 +5,10 @@ public class Warrior extends Hero {
         super(name, maximumHP, attack);
     }
 
+    /**
+     * ウェポンスキルのコード
+     * 150%の固定ダメージが入るように設定。
+     */
     public void attackWithWeponSkill(LivingThing opponent){
         if (isDead()) {
             return;
